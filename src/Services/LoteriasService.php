@@ -14,10 +14,13 @@ class LoteriasService
         $this->modalidade = $modalidade;
     }
 
-    public function concurso($num_concurso = null)
+    public function concurso($num_concurso)
     {
-        $concursoClass = $this->modalidade->getConcursoClass();
+        return $this->modalidade->getConcursoClass()::get($num_concurso);
+    }
 
-        return $concursoClass::find($num_concurso);
+    public function ultimoConcurso()
+    {
+        return $this->modalidade->getConcursoClass()::ultimo();
     }
 }

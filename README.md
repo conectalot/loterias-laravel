@@ -1,8 +1,6 @@
 # ConectaLot Loterias
 
-## Descrição
-
-Pacote que provê diversas funcionalidades das Loterias CAIXA para aplicações desenvolvidas em Laravel.
+Esse pacote foi desenvolvido pela ConectaLot e provê diversas funcionalidades das Loterias CAIXA para aplicações desenvolvidas em Laravel.
 
 
 ## Instalação
@@ -33,5 +31,43 @@ Tenha a certeza de que você possui acesso a esse repositório com uma chave SSH
 Para publicar o arquivo de configuração, execute o comando abaixo:
 
 ```bash
-php artisan vendor:publish --provider="ConectaLot\Loterias\LoteriasServiceProvider"
+php artisan vendor:publish --provider="Conectalot\Loterias\LoteriasServiceProvider"
 ```
+
+
+## Utilização
+
+### Consultar resultados
+
+Para consultar o resultado de um **concurso específico** de uma modalidade lotérica, use o método `concurso($numero)` do facade correspondente. 
+
+```php
+use ConectaLot\Loterias\Facades\MegaSena;
+
+//Retorna o resultado do concurso 2550 da Mega-Sena
+$resultado = MegaSena::concurso(2550);
+```
+
+Para obter o resultado do **último concurso**, use o método `ultimoConcurso()`:
+```php
+use ConectaLot\Loterias\Facades\Lotofacil;
+
+//Retorna o resultado do último concurso da Lotofácil
+$resultado = Lotofacil::ultimoConcurso();
+```
+
+Tabela de facades disponíveis:
+
+| Modalidade Lotérica | Facade                                     |
+|---------------------|--------------------------------------------|
+| Mega Sena           | Conectalot\Loterias\Facades\MegaSena       |
+| Lotofácil           | Conectalot\Loterias\Facades\Lotofacil      |
+| Quina               | Conectalot\Loterias\Facades\Quina          |
+| Lotomania           | Conectalot\Loterias\Facades\Lotomania      |
+| Timemania           | Conectalot\Loterias\Facades\Timemania      |
+| Dupla Sena          | Conectalot\Loterias\Facades\DuplaSena      |
+| Dia de Sorte        | Conectalot\Loterias\Facades\DiaDeSorte     |
+| Super Sete          | Conectalot\Loterias\Facades\SuperSete      |
+| Federal             | Conectalot\Loterias\Facades\Federal        |
+| Loteca              | Conectalot\Loterias\Facades\Loteca         |
+| +Milionária         | Conectalot\Loterias\Facades\MaisMilionaria |
