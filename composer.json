@@ -1,0 +1,33 @@
+{
+    "name": "conectalot/loterias-laravel",
+    "description": "Pacote Laravel para prover diversas funcionalidades relacionadas a loterias.",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://conectalot.com.br",
+    "authors": [
+        {
+            "name": "Itrio Netuno",
+            "email": "itrio@conectalot.com.br",
+            "github": "https://github.com/itrio"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Conectalot\\Loterias\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Conectalot\\Loterias\\Providers\\LoteriasServiceProvider"
+            ],
+            "aliases": {
+                "MegaSena": "Conectalot\\Loterias\\Facades\\MegaSena"
+            }
+        }
+    }
+}
