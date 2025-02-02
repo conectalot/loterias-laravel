@@ -2,25 +2,19 @@
 
 namespace Conectalot\Loterias\Models;
 
+use Conectalot\Loterias\Traits\TemDezenas;
 use Illuminate\Database\Eloquent\Model;
-use Conectalot\Loterias\Utils\DezenasCollection;
 
 abstract class ConcursoLoterico extends Model
 {
+    use TemDezenas;
+
     protected $casts = [
-        'dezenas_sorteadas1' => \Conectalot\Loterias\Casts\Dezenas::class,
-        'dezenas_sorteadas2' => \Conectalot\Loterias\Casts\Dezenas::class,
-        'dezenas_sorteadas' => \Conectalot\Loterias\Casts\Dezenas::class,
+        'acumulado' => 'boolean',
+        'data_apuracao' => 'date',
+        'data_proximo_concurso' => 'date',
+        'municipios_ganhadores' => 'array',
     ];
-
-    public function getDezenasAttribute(): DezenasCollection
-    {
-        if($this->dezenas_sorteadas1) {
-            return new DezenasCollection([$this->dezenas_sorteadas1, $this->dezenas_sorteadas2]);
-        }
-
-        return new DezenasCollection($this->dezenas_sorteadas);
-    }
 
     public static function get($num_concurso): ConcursoLoterico
     {
