@@ -94,7 +94,7 @@ $resultados = DuplaSena::concursos()
     ->to(2710);
 ```
 
-Os métodom `from()` e `to()` aceitam datas no formato `Y-m-d`, objetos `Carbon` ou números inteiros referentes ao número do concurso.
+Os métodos `from()` e `to()` aceitam datas no formato `Y-m-d`, objetos `Carbon` ou números inteiros referentes ao número do concurso.
 
 ## Facades disponíveis
 
