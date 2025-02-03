@@ -25,4 +25,14 @@ abstract class ConcursoLoterico extends Model
     {
         return Self::orderBy('id', 'desc')->first();
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Define a conexão de banco de dados dinamicamente
+        static::retrieved(function ($model) {
+            $model->setConnection(config('conectalot.conectalot_db_conection'));
+        });
+    }
 }

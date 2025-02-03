@@ -31,9 +31,17 @@ Tenha a certeza de que você possui acesso a esse repositório com uma chave SSH
 Para publicar o arquivo de configuração, execute o comando abaixo:
 
 ```bash
-php artisan vendor:publish --provider="Conectalot\Loterias\LoteriasServiceProvider"
+php artisan vendor:publish --provider="Conectalot\Loterias\LoteriasServiceProvider" --tag=config
 ```
 
+Se o banco de dados de Loterias for diferente do banco de dados principal da sua aplicação, altere a configuração no arquivo `config/loterias.php`:
+
+```php
+return [
+    'conectalot_db_conection' => 'mysql_conectalot',
+    //...
+];
+```
 
 ## Utilização
 
