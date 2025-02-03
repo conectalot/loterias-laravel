@@ -64,6 +64,38 @@ use ConectaLot\Loterias\Facades\Lotofacil;
 $resultado = Lotofacil::ultimoConcurso();
 ```
 
+Para obter o resultado de **todos os concursos** de uma modalidade lotérica, use o método `concursos()`:
+```php
+use ConectaLot\Loterias\Facades\Quina;
+
+//Retorna um array com todos os concursos da Quina
+$resultados = Quina::concursos();
+```
+
+Também é possível recuperar uma coleção de resultados a partir de datas ou de um intervalo de concursos usando os métodos `fromDate()`, `toDate()`, `fromConcurso()`, `toConcurso()` ou `from()` e `to()`:
+```php
+use ConectaLot\Loterias\Facades\Lotomania;
+
+//Retorna os concursos da Lotomania de 2024
+$resultados = Lotomania::concursos()
+    ->from('2024-01-01')
+    ->to('2024-12-31');
+    
+//Retorna os concursos da SuperSete do concurso 300 a 400
+$resultados = SuperSete::concursos()
+    ->fromConcurso(300)
+    ->toConcurso(400);
+    
+//Retorna os concursos da Dupla Sena a partir de 2024 e até o concurso 1000
+$resultados = Loteca::concursos()
+    ->from('2024-01-01')
+    ->to(2710);
+```
+
+Os métodom `from()` e `to()` aceitam datas no formato `Y-m-d`, objetos `Carbon` ou números inteiros referentes ao número do concurso.
+
+## Facades disponíveis
+
 Tabela de facades disponíveis:
 
 | Modalidade Lotérica | Facade                                     |

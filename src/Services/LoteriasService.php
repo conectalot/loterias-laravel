@@ -14,6 +14,11 @@ class LoteriasService
         $this->modalidade = $modalidade;
     }
 
+    public function concursos()
+    {
+        return $this->modalidade->getConcursoClass()::smartBuilder();
+    }
+
     public function concurso($num_concurso)
     {
         return $this->modalidade->getConcursoClass()::get($num_concurso);

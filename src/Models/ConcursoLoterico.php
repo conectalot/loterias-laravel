@@ -2,12 +2,14 @@
 
 namespace Conectalot\Loterias\Models;
 
+use Carbon\Carbon;
 use Conectalot\Loterias\Traits\TemDezenas;
 use Illuminate\Database\Eloquent\Model;
+use Conectalot\Loterias\Traits\SmartBuilder;
 
 abstract class ConcursoLoterico extends Model
 {
-    use TemDezenas;
+    use TemDezenas, SmartBuilder;
 
     protected $casts = [
         'acumulado' => 'boolean',
@@ -18,12 +20,12 @@ abstract class ConcursoLoterico extends Model
 
     public static function get($num_concurso): ConcursoLoterico
     {
-        return Self::find($num_concurso);
+        return self::find($num_concurso);
     }
 
     public static function ultimo(): ConcursoLoterico
     {
-        return Self::orderBy('id', 'desc')->first();
+        return self::orderBy('id', 'desc')->first();
     }
 
     protected static function boot()
