@@ -100,16 +100,16 @@ Os métodos `from()` e `to()` aceitam datas no formato `Y-m-d`, objetos `Carbon`
 
 Tabela de facades disponíveis:
 
-| Modalidade Lotérica | Facade                                     |
-|---------------------|--------------------------------------------|
-| Mega Sena           | Conectalot\Loterias\Facades\MegaSena       |
-| Lotofácil           | Conectalot\Loterias\Facades\Lotofacil      |
-| Quina               | Conectalot\Loterias\Facades\Quina          |
-| Lotomania           | Conectalot\Loterias\Facades\Lotomania      |
-| Timemania           | Conectalot\Loterias\Facades\Timemania      |
-| Dupla Sena          | Conectalot\Loterias\Facades\DuplaSena      |
-| Dia de Sorte        | Conectalot\Loterias\Facades\DiaDeSorte     |
-| Super Sete          | Conectalot\Loterias\Facades\SuperSete      |
-| Federal             | Conectalot\Loterias\Facades\Federal        |
-| Loteca              | Conectalot\Loterias\Facades\Loteca         |
-| +Milionária         | Conectalot\Loterias\Facades\MaisMilionaria |
+| Modalidade Lotérica | Facade                                        |
+|---------------------|-----------------------------------------------|
+| Mega Sena           | `Conectalot\Loterias\Facades\MegaSena`        |
+| Lotofácil           | `Conectalot\Loterias\Facades\Lotofacil`       |
+| Quina               | `Conectalot\Loterias\Facades\Quina`           |
+| Lotomania           | `Conectalot\Loterias\Facades\Lotomania`       |
+| Timemania           | `Conectalot\Loterias\Facades\Timemania`       |
+| Dupla Sena          | `Conectalot\Loterias\Facades\DuplaSena`       |
+| Dia de Sorte        | `Conectalot\Loterias\Facades\DiaDeSorte`      |
+| Super Sete          | `Conectalot\Loterias\Facades\SuperSete`       |
+| Federal             | `Conectalot\Loterias\Facades\Federal`         |
+| Loteca              | `Conectalot\Loterias\Facades\Loteca`          |
+| +Milionária         | `Conectalot\Loterias\Facades\MaisMilionaria`  |
