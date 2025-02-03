@@ -75,6 +75,8 @@ $resultados = Quina::concursos();
 Também é possível recuperar uma coleção de resultados a partir de datas ou de um intervalo de concursos usando os métodos `fromDate()`, `toDate()`, `fromConcurso()`, `toConcurso()` ou `from()` e `to()`:
 ```php
 use ConectaLot\Loterias\Facades\Lotomania;
+use ConectaLot\Loterias\Facades\SuperSete;
+use ConectaLot\Loterias\Facades\DuplaSena;
 
 //Retorna os concursos da Lotomania de 2024
 $resultados = Lotomania::concursos()
@@ -87,7 +89,7 @@ $resultados = SuperSete::concursos()
     ->toConcurso(400);
     
 //Retorna os concursos da Dupla Sena a partir de 2024 e até o concurso 1000
-$resultados = Loteca::concursos()
+$resultados = DuplaSena::concursos()
     ->from('2024-01-01')
     ->to(2710);
 ```
