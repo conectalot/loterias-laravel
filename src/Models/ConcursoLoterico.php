@@ -16,6 +16,7 @@ abstract class ConcursoLoterico extends Model
         'data_apuracao' => 'date',
         'data_proximo_concurso' => 'date',
         'municipios_ganhadores' => 'array',
+        'resultado_equipe_esportiva' => 'array',
     ];
 
     public static function get($num_concurso): ConcursoLoterico
